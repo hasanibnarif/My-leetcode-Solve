@@ -1,0 +1,42 @@
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+
+class Solution:
+    def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
+        
+        ret = None
+        
+        itret = ret
+        
+        while (l1 is not None) or (l2 is not None) :
+            
+            one = 99999
+            two = 99999
+            
+            if l1 is not None : one = l1.val
+            if l2 is not None : two = l2.val
+            
+            if(one<two) : 
+                new = one
+                l1 = l1.next
+            else :
+                new = two
+                l2 = l2.next
+            
+            newNode = ListNode(new)
+            
+            if ret is None : 
+                ret = newNode
+                it = ret
+            else :
+                it.next = newNode
+                it = it.next
+            
+            
+        return ret
+            
+            
+                 Two Sorted Lists.py
