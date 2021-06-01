@@ -24,9 +24,12 @@ public:
 
        ListNode* node = head->next;
        ListNode* prev = reverseList(node);
+       node->next = head;
        
-       prev->next = head;
-       return head;
+       head->next = nullptr;
+
+       return node;
+       
     }
 };
 // @lc code=end
