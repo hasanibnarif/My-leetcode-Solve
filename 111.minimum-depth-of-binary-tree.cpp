@@ -19,11 +19,6 @@
 class Solution {
 public:
 
-    int getDepth(TreeNode* root) { 
-        if(root == nullptr) return 0;
-
-        return max(minDepth(root->left),minDepth(root->right)) + 1;
-    }
 
     int minDepth(TreeNode* root) {
         if(root == nullptr) return 0;
